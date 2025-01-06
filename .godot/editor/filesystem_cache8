@@ -1,0 +1,20 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736189013
+icon.svg::CompressedTexture2D::6480636004437291081::1736187718::1736187735::1::::<><>::
+::res://addons/::1736189013
+::res://addons/sprout_lands_ui/::1736189014
+ATTRIBUTION.md::TextFile::-1::1736189013::0::1::::<><>::
+LICENSE.txt::TextFile::-1::1736189013::0::1::::<><>::
+plugin.cfg::TextFile::-1::1736189013::0::1::::<><>::
+README.md::TextFile::-1::1736189013::0::1::::<><>::
+sprout_lands_ui.gd::GDScript::-1::1736189013::0::1::::<>EditorPlugin<>::
+::res://addons/sprout_lands_ui/content/::1736189013
+sprout_lands_theme.tres::Theme::3240755844323932521::1736189013::0::1::::<><>::uid://bef816edvcpop::::res://addons/sprout_lands_ui/content/assets/Sprite sheet for Basic Pack.png
+::res://addons/sprout_lands_ui/content/assets/::1736189013
+read_me_ui.txt::TextFile::-1::1736189013::0::1::::<><>::
+SkipButton.png::CompressedTexture2D::3811524589005181107::1736189013::1736189114::1::::<><>::
+Sprite sheet for Basic Pack.png::CompressedTexture2D::2679549672985887975::1736189013::1736189115::1::::<><>::
+::res://addons/sprout_lands_ui/installer/::1736189013
+copy_confirmation_dialog.tscn::PackedScene::6506630939107533720::1736189013::0::1::::<><>::
+custom_theme_confirmation_dialog.tscn::PackedScene::1283435976559478972::1736189013::0::1::::<><>::
+destination_dialog.tscn::PackedScene::5524076666757777413::1736189013::0::1::::<><>::
