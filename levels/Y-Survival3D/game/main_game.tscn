@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhw0hyte7u3pl"]
+
+[ext_resource type="PackedScene" uid="uid://ub6h2tbchvsq" path="res://levels/Y-Survival3D/meshes/terrain.tscn" id="1_ctd5s"]
+[ext_resource type="PackedScene" uid="uid://ck2vj635yr2jj" path="res://levels/Y-Survival3D/meshes/tree.tscn" id="2_0u1xe"]
+[ext_resource type="PackedScene" uid="uid://bd2ui1ffltpcq" path="res://levels/Y-Survival3D/meshes/mushroom.tscn" id="3_02un7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vofxt"]
+transparency = 1
+albedo_color = Color(0.388235, 0.760784, 0.768627, 0.807843)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_31dn7"]
+material = SubResource("StandardMaterial3D_vofxt")
+size = Vector2(2000, 2000)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gkf6t"]
+sky_top_color = Color(0.32549, 0.878431, 1, 1)
+sky_horizon_color = Color(0.670588, 0.784314, 0.831373, 1)
+ground_horizon_color = Color(0.670588, 0.784314, 0.831373, 1)
+
+[sub_resource type="Sky" id="Sky_3mvtu"]
+sky_material = SubResource("ProceduralSkyMaterial_gkf6t")
+
+[sub_resource type="Environment" id="Environment_hhvmk"]
+background_mode = 2
+sky = SubResource("Sky_3mvtu")
+ambient_light_color = Color(0.32549, 0.878431, 1, 1)
+ambient_light_sky_contribution = 0.5
+
+[node name="MainGame" type="Node"]
+
+[node name="StageController" type="Node" parent="."]
+
+[node name="Island" type="Node" parent="StageController"]
+
+[node name="Terrain" parent="StageController/Island" instance=ExtResource("1_ctd5s")]
+
+[node name="Tree" parent="StageController/Island" instance=ExtResource("2_0u1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02199, 0.0449514, -2.47955)
+
+[node name="Tree2" parent="StageController/Island" instance=ExtResource("2_0u1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60971, 0.0449514, 1.86657)
+
+[node name="Tree3" parent="StageController/Island" instance=ExtResource("2_0u1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91244, 0.0449519, -5.28027)
+
+[node name="Tree4" parent="StageController/Island" instance=ExtResource("2_0u1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47037, 0.0449524, 5.16649)
+
+[node name="Mushroom" parent="StageController/Island" instance=ExtResource("3_02un7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31964, 0, -1.51358)
+
+[node name="Mushroom2" parent="StageController/Island" instance=ExtResource("3_02un7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05355, 4.76837e-07, 1.28372)
+
+[node name="Mushroom3" parent="StageController/Island" instance=ExtResource("3_02un7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60628, 4.76837e-07, 2.05325)
+
+[node name="Water" type="MeshInstance3D" parent="StageController/Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.16003, 0)
+mesh = SubResource("PlaneMesh_31dn7")
+
+[node name="Sun" type="DirectionalLight3D" parent="StageController/Island"]
+transform = Transform3D(1, 0, 0, 0, 0.659018, 0.752127, 0, -0.752127, 0.659018, 0, 0, 0)
+light_color = Color(0.996078, 1, 0.729412, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="StageController/Island"]
+environment = SubResource("Environment_hhvmk")
