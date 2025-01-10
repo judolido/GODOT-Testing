@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhw0hyte7u3pl"]
+[gd_scene load_steps=13 format=3 uid="uid://bhw0hyte7u3pl"]
 
 [ext_resource type="PackedScene" uid="uid://ub6h2tbchvsq" path="res://levels/Y-Survival3D/meshes/terrain.tscn" id="1_ctd5s"]
 [ext_resource type="PackedScene" uid="uid://ck2vj635yr2jj" path="res://levels/Y-Survival3D/meshes/tree.tscn" id="2_0u1xe"]
+[ext_resource type="PackedScene" uid="uid://bryxgohgskem4" path="res://levels/Y-Survival3D/items/interactables/pickapable_stick.tscn" id="2_pjxw4"]
 [ext_resource type="PackedScene" uid="uid://bd2ui1ffltpcq" path="res://levels/Y-Survival3D/meshes/mushroom.tscn" id="3_02un7"]
+[ext_resource type="PackedScene" uid="uid://khqsphmxsxnl" path="res://levels/Y-Survival3D/items/interactables/pickapable_stone.tscn" id="3_tomdq"]
 [ext_resource type="PackedScene" uid="uid://cn5tquutfw76h" path="res://levels/Y-Survival3D/actors/player/player.tscn" id="4_6fcuk"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ccjsa"]
@@ -39,9 +41,22 @@ ambient_light_sky_contribution = 0.5
 [node name="Terrain" parent="StageController/Island" instance=ExtResource("1_ctd5s")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StageController/Island/Terrain"]
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StageController/Island/Terrain/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ccjsa")
+
+[node name="PickapableStick" parent="StageController/Island/Terrain" instance=ExtResource("2_pjxw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15243, 0, 2.57876)
+
+[node name="PickapableStone" parent="StageController/Island/Terrain" instance=ExtResource("3_tomdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2398, 2.38419e-07, -1.16502)
+
+[node name="PickapableStick2" parent="StageController/Island/Terrain" instance=ExtResource("2_pjxw4")]
+transform = Transform3D(0.229183, 0, 0.973383, 0, 1, 0, -0.973383, 0, 0.229183, 2.01804, 4.76837e-07, -2.34518)
+
+[node name="PickapableStone2" parent="StageController/Island/Terrain" instance=ExtResource("3_tomdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50742, 0, 4.60886)
 
 [node name="Tree" parent="StageController/Island" instance=ExtResource("2_0u1xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02199, 0.0449514, -2.47955)

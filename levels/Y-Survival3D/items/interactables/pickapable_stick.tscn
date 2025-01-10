@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bryxgohgskem4"]
+
+[ext_resource type="PackedScene" uid="uid://cmbipy0pjgqny" path="res://levels/Y-Survival3D/items/interactables/pickapable_template.tscn" id="1_q486k"]
+[ext_resource type="PackedScene" uid="uid://bkglf4s58m8kd" path="res://levels/Y-Survival3D/meshes/stick.tscn" id="2_0ygtf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5xmyr"]
+radius = 0.0393075
+height = 0.727772
+
+[node name="PickapableStick" instance=ExtResource("1_q486k")]
+
+[node name="Pickapable" parent="." index="0"]
+prompt = "Pickup stick"
+
+[node name="CollisionShape3D" parent="Pickapable" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5xmyr")
+
+[node name="Stick" parent="." index="1" instance=ExtResource("2_0ygtf")]

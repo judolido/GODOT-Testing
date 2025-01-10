@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://khqsphmxsxnl"]
+
+[ext_resource type="PackedScene" uid="uid://cmbipy0pjgqny" path="res://levels/Y-Survival3D/items/interactables/pickapable_template.tscn" id="1_dqaxg"]
+[ext_resource type="PackedScene" uid="uid://b3podpr1ipe5a" path="res://levels/Y-Survival3D/meshes/stone.tscn" id="2_xg4fh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dxvxk"]
+radius = 0.0969963
+
+[node name="PickapableStone" instance=ExtResource("1_dqaxg")]
+
+[node name="Pickapable" parent="." index="0"]
+item_key = 1
+prompt = "Pickup stone"
+
+[node name="CollisionShape3D" parent="Pickapable" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_dxvxk")
+
+[node name="Stone" parent="." index="1" instance=ExtResource("2_xg4fh")]
